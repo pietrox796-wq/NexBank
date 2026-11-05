@@ -1,0 +1,11 @@
+Como funcionaria o NexBank?
+
+O NexBank funcionaria como um banco digital, permitindo que os usuários acessem suas contas pelo aplicativo ou site, utilizando login e senha. Após entrar, o cliente teria acesso a uma tela inicial com seu saldo disponível, extrato e histórico de movimentações.
+
+A plataforma permitiria realizar transferências, efetuar pagamentos, consultar entradas e saídas de dinheiro, visualizar dados da conta e receber notificações sobre as operações realizadas.
+
+O sistema também contaria com uma área de suporte para ajudar os usuários em caso de dúvidas ou problemas, além de uma interface simples e organizada para facilitar a navegação.
+
+O objetivo do NexBank é oferecer praticidade, rapidez e facilidade no acesso aos serviços bancários, permitindo que os clientes realizem suas operações financeiras sem precisar ir até uma agência.
+
+Importante: Como se trata de um projeto acadêmico, todas as operações serão simuladas, sem movimentação de dinheiro real ou conexão com bancos existentes.
