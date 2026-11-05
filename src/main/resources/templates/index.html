@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NexBank</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f4121c;
+            color: white;
+            border-radius: 6px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .inicio {
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+
+        .inicio p {
+            margin-bottom: 25px;
+        }
+
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .item {
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .item h3 {
+            margin-bottom: 10px;
+        }
+
+        .planos {
+            background: #f5f5f5;
+        }
+
+        .faq details {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 30px 0;
+            background: #171717;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            nav, nav ul {
+                flex-direction: column;
+            }
+
+            .grade {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a class="logo" href="#inicio">NexBank</a>
+
+                <ul>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#cartao">Cartão</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#duvidas">Dúvidas</a></li>
+                </ul>
+
+                <!-- TODO Thymeleaf: trocar o destino pelo endpoint de login/cadastro -->
+                <a class="botao" href="#">Entrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="inicio" id="inicio">
+            <div class="container">
+                <h1>Seu banco digital, simples e completo.</h1>
+                <p>Faça pagamentos, acompanhe seu dinheiro e conheça nossos serviços.</p>
+
+                <!-- TODO Thymeleaf: definir o link usando th:href -->
+                <a class="botao" href="#cadastro">Abra sua conta</a>
+            </div>
+        </section>
+
+        <section id="recursos">
+            <div class="container">
+                <h2>Nossos recursos</h2>
+                <div class="grade">
+
+                    <!-- TODO Thymeleaf: iterar a lista de recursos com th:each -->
+                    <article class="item">
+                        <h3>Pix</h3>
+                        <p>Envie e receba dinheiro de forma prática.</p>
+                    </article>
+
+                    <article class="item">
+                        <h3>Cartão</h3>
+                        <p>Consulte as informações e os benefícios do seu cartão.</p>
+                    </article>
+
+                    <article class="item">
+                        <h3>Investimentos</h3>
+                        <p>Conheça opções para organizar seu dinheiro.</p>
+                    </article>
+                    <!-- Fim da área dinâmica de recursos -->
+
+                </div>
+            </div>
+        </section>
+
+        <section id="cartao">
+            <div class="container">
+                <h2>Conheça o cartão NexBank</h2>
+                <p>Um cartão para facilitar suas compras e pagamentos.</p>
+
+                <!-- TODO Thymeleaf: futuramente, exibir dados do cartão ou imagem cadastrada -->
+            </div>
+        </section>
+
+        <section class="planos" id="planos">
+            <div class="container">
+                <h2>Nossos planos</h2>
+                <div class="grade">
+
+                    <!-- TODO Thymeleaf: substituir os exemplos por uma lista de planos do Model -->
+                    <article class="item">
+                        <h3>Essencial</h3>
+                        <p>Conta digital para o dia a dia.</p>
+                        <p><strong>Grátis</strong></p>
+                    </article>
+
+                    <article class="item">
+                        <h3>Plus</h3>
+                        <p>Mais benefícios para sua conta.</p>
+                        <p><strong>Consulte as condições</strong></p>
+                    </article>
+
+                    <article class="item">
+                        <h3>Black</h3>
+                        <p>Benefícios adicionais.</p>
+                        <p><strong>Consulte as condições</strong></p>
+                    </article>
+                    <!-- Fim da área dinâmica de planos -->
+
+                </div>
+            </div>
+        </section>
+
+        <section id="seguranca">
+            <div class="container">
+                <h2>Sua segurança é importante</h2>
+                <p>Tenha acesso às informações da sua conta e acompanhe suas movimentações.</p>
+            </div>
+        </section>
+
+        <section class="faq" id="duvidas">
+            <div class="container">
+                <h2>Perguntas frequentes</h2>
+
+                <!-- TODO Thymeleaf: iterar perguntas e respostas com th:each -->
+                <details>
+                    <summary>Como abrir uma conta?</summary>
+                    <p>Use a opção de cadastro e preencha as informações solicitadas.</p>
+                </details>
+
+                <details>
+                    <summary>Como entro em contato?</summary>
+                    <p>Adicione aqui os canais de atendimento do banco.</p>
+                </details>
+                <!-- Fim da área dinâmica de perguntas -->
+
+            </div>
+        </section>
+
+        <section id="cadastro">
+            <div class="container">
+                <h2>Comece a usar o NexBank</h2>
+                <p>Crie sua conta para conhecer os serviços.</p>
+
+                <!-- TODO Thymeleaf: apontar para a rota de cadastro -->
+                <a class="botao" href="#">Criar conta</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NexBank. Todos os direitos reservados.</p>
+            <!-- TODO Thymeleaf: preencher links de termos e política de privacidade -->
+        </div>
+    </footer>
+
+</body>
+</html>
