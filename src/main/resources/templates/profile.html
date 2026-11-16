@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Perfil | NexBank</title>
+
+
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- CABEÇALHO -->
+
+    <header>
+		<a href = "#" class = "logo">
+                <img th:src = "@{isologoATT.png}" alt = "NexBank" class = "logo-imagem">
+                </a>
+		<nav>
+			<a th:href="@{/index}">Início</a> |
+			<a th:href="@{/profile}">Minha Conta</a> |
+			<a th:href = "@{/safe}">Cofre</a>
+		</nav>
+	</header>
+
+
+
+    <main class="profile-layout">
+
+
+
+        <!-- LADO ESQUERDO -->
+
+        <section class="profile-apresentacao" method = "get" th:action = "@{/profile}" th:object = "${acc}">
+
+
+
+            <div class="decoracao decoracao-1"></div>
+
+            <div class="decoracao decoracao-2"></div>
+
+
+
+            <div class="profile-apresentacao-conteudo">
+
+
+
+                <span class="etiqueta">ÁREA EXCLUSIVA NEXBANK</span>
+
+
+
+                <h1>
+
+                    Seu perfil.
+
+                    <br>
+
+                    Sua conta.
+
+                    <br>
+
+                    <span>Sua evolução.</span>
+
+                </h1>
+
+
+
+                <p>
+
+                    Gerencie suas informações pessoais e acompanhe
+
+                    os detalhes da sua conta em um só lugar.
+
+                </p>
+
+
+
+                <!-- CARTÃO DO USUÁRIO -->
+
+                <div class="profile-cartao">
+
+
+
+                    <div class="profile-cartao-topo">
+
+
+
+                        <img th:src="@{/isologoATT.png}"
+
+                             alt="NexBank"
+
+                             class="logo-imagem">
+
+
+
+                        <span>NEXBANK</span>
+
+
+
+                    </div>
+
+
+
+                    <div class="profile-avatar">
+
+						<h1 th:text = "${acc.username}">Nome</h1>
+
+                    </div>
+
+
+
+                    <div class="profile-cartao-info">
+
+
+
+                        <span>CLIENTE NEXBANK</span>
+
+
+
+
+                    </div><br>
+
+
+
+                    <div class="profile-cartao-rodape">
+
+                        <span>CONTA DIGITAL</span>
+
+                        <strong>PREMIUM</strong>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="seguranca">
+
+                    <span>◈</span>
+
+                    Seus dados protegidos com tecnologia de segurança.
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <!-- LADO DIREITO -->
+
+        <section class="profile-area">
+
+
+
+            <div class="profile-card">
+
+
+
+                <div class="profile-cabecalho">
+
+
+
+                    <span class="login-etiqueta">
+
+                        MINHA CONTA
+
+                    </span>
+
+
+
+                    <h2>Meu perfil</h2>
+
+
+
+                    <p>
+
+                        Confira as informações cadastradas na sua conta NexBank.
+
+                    </p>
+
+
+
+                </div>
+
+
+
+                <!-- SALDO -->
+
+                <div class="profile-saldo">
+
+
+                    <span>Saldo disponível</span>
+
+
+
+                    <h2 th:text = "${acc.cash}">
+
+                        R$
+
+                        
+
+                            0,00
+
+                    </h2>
+
+
+
+                </div>
+
+
+
+                <!-- INFORMAÇÕES PESSOAIS -->
+
+                <div class="profile-secao">
+
+
+
+                    <h3>Informações pessoais:</h3><br>
+
+
+
+                    <div class="profile-informacoes">
+
+
+
+                        <div class="profile-campo">
+
+                            <span>Nome completo</span><br>
+
+                            <strong th:text = "${acc.username}">
+
+                                Nome do usuário
+
+                        </div><br>
+
+
+
+                        <div class="profile-campo">
+
+                            <span>CPF</span><br>
+
+                            <strong th:text = "${acc.cpf}">
+
+                                00000000000
+
+                            </strong>
+
+                        </div><br>
+
+
+
+                        <div class="profile-campo">
+
+                            <span>Data de criação</span><br>
+
+                            <strong th:text = "${acc.age}">
+
+                                00/00/0000
+
+                            </strong>
+
+                        </div><br>
+
+
+
+                        <div class="profile-campo">
+
+                            <span>ID da conta</span><br>
+
+                            <strong th:text = "${acc.id}">
+
+                                000
+
+                            </strong>
+
+                        </div><br>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- INFORMAÇÕES DA CONTA -->
+
+                <div class="profile-secao">
+
+
+
+                    <h3>Informações da conta:</h3><br>
+
+
+
+                    <div class="profile-informacoes">
+
+
+
+                        <div class="profile-campo">
+
+                            <span>Nível da conta</span><br>
+
+
+
+                            <strong>
+
+                                <span th:text = "${acc.level != null ? acc.level : 1}">
+
+                                    1
+
+                                </span><br>
+
+                            </strong>
+
+                        </div><br>
+
+
+
+                        <div class="profile-campo">
+
+                            <span>Tipo de conta</span><br>
+
+                            <strong>Conta digital</strong>
+
+                        </div><br>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- BOTÕES -->
+
+
+
+                <div class="login-protecao">
+
+                    <span>◈</span>
+
+                    Ambiente seguro e protegido NexBank
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+        © 2026 NexBank. Todos os direitos reservados.
+
+    </footer>
+
+
+
+</body>
+
+</html>

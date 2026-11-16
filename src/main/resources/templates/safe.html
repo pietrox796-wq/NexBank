@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cofre Digital | NexBank</title>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+
+	<header>
+		<a href = "#" class = "logo">
+                <img th:src = "@{isologoATT.png}" alt = "NexBank" class = "logo-imagem">
+                </a>
+		<nav>
+			<a th:href="@{/index}">Início</a> |
+			<a th:href="@{/profile}">Minha Conta</a> |
+			<a th:href="@{/bankoperation}">Depositar</a> |
+			<a th:href="@{/transferencias}">Transferências</a>
+		</nav>
+	</header>
+
+	<hr>
+
+	<main>
+
+		<h1>Meu Banco Digital</h1>
+		<p>Guarde seu dinheiro e acompanhe suas economias!</p>
+
+		<section>
+			<h2>Saldo Total</h2>
+			
+			<form method = "post" th:action = "@{/safe}" th:if = "${acc != null}">
+
+			<h1>
+				R$
+				<span th:text="${acc.cash}">
+					0,00
+				</span>
+			</h1>
+
+			<p>Dinheiro total armazenado</p>
+			
+			</form>
+		</section>
+
+		<hr>
+
+		<section>
+			<h2>Adicionar dinheiro ao Cofre</h2>
+
+			<form th:action="@{/safe}">
+
+				<label for="valorDeposito">Valor do depósito:</label>
+
+				<input type="number" id="valorDeposito" name="valor" placeholder="Digite o valor" min="0.01" step="0.01"
+					required>
+
+				<button type="submit">Guardar dinheiro</button>
+
+			</form>
+		</section>
+
+		<hr>
+
+		<section>
+			<h2>Retirar dinheiro do Cofre</h2>
+
+			<form th:action="@{/cofre/retirar}" method="post">
+
+				<label for="valorRetirada">Valor da retirada:</label>
+
+				<input type="number" id="valorRetirada" name="valor" placeholder="Digite o valor" min="0.01" step="0.01"
+					required>
+
+				<button type="submit">Retirar dinheiro</button>
+
+			</form>
+		</section>
+
+		<hr>
+
+		<section>
+			<h2>Histórico de movimentações</h2>
+			
+
+			<table border="1">
+
+				<thead>
+					<tr>
+						<th>Data</th>
+						<th>Valor</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="transaction : ${transactions}">
+						<td th:text="${transaction.age}"></td>
+						<td th:text="${transaction.cash}"></td>
+					</tr>
+
+					<tr th:if="${#lists.isEmpty(transactions)}">
+						<td colspan="4">
+							Nenhuma movimentação encontrada.
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+		</section>
+
+	</main>
+
+	<hr>
+
+	<footer>
+		<p>© 2026 NexBank - Todos os direitos reservados.</p>
+	</footer>
+
+</body>
+
+</html>

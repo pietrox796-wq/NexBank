@@ -1,0 +1,2497 @@
+style.css
+
+/* ==================================================
+
+   NEXBANK - LOGIN PREMIUM
+
+   IDENTIDADE: PRETO / VERMELHO / BRANCO
+
+   ================================================== */
+
+
+
+
+
+/* FONTES */
+
+
+
+@font-face {
+
+    font-family: 'NexBankRegular';
+
+    src: url('https://static.nubank.com.br/7f7bc5c32824aca0d84078cc9334db1bb79c9aa2/_next/static/media/60a2f104238a90af-s.p.woff2') format('woff2');
+
+    font-weight: 400;
+
+    font-display: swap;
+
+}
+
+
+
+@font-face {
+
+    font-family: 'NexBankMedium';
+
+    src: url('https://static.nubank.com.br/7f7bc5c32824aca0d84078cc9334db1bb79c9aa2/_next/static/media/64a06134aa18a255-s.p.woff2') format('woff2');
+
+    font-weight: 500;
+
+    font-display: swap;
+
+}
+
+
+
+
+
+/* VARIÁVEIS */
+
+
+
+:root {
+
+    --vermelho: #E30613;
+
+    --vermelho-claro: #FF1525;
+
+    --vermelho-escuro: #750008;
+
+
+
+    --preto: #070707;
+
+    --preto-card: #101010;
+
+    --branco: #FFFFFF;
+
+
+
+    --cinza: #A5A5A5;
+
+    --borda: #292929;
+
+
+
+    --fonte: 'NexBankRegular', Arial, sans-serif;
+
+    --fonte-titulo: 'NexBankMedium', Arial, sans-serif;
+
+}
+
+
+
+
+
+/* RESET */
+
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+html {
+
+    min-height: 100%;
+
+}
+
+
+
+body {
+
+    min-height: 100vh;
+
+    background: var(--preto);
+
+    color: var(--branco);
+
+    font-family: var(--fonte);
+
+    overflow-x: hidden;
+
+}
+
+
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   CABEÇALHO
+
+   ================================================== */
+
+
+
+.topo {
+
+    height: 76px;
+
+    width: 100%;
+
+
+
+    padding: 0 5%;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+
+
+    background: #080808;
+
+    border-bottom: 1px solid #242424;
+
+
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+
+
+    color: white;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 25px;
+
+}
+
+
+
+/* IMAGEM DA LOGO */
+
+.logo-imagem {
+
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+
+.logo-simbolo,
+
+.cartao-simbolo {
+
+    width: 34px;
+
+    height: 34px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    background: linear-gradient(
+
+        135deg,
+
+        #FF2735,
+
+        #A5000A
+
+    );
+
+
+
+    clip-path: polygon(
+
+        50% 0,
+
+        100% 28%,
+
+        100% 72%,
+
+        50% 100%,
+
+        0 72%,
+
+        0 28%
+
+    );
+
+
+
+    font-weight: bold;
+
+    color: white;
+
+}
+
+
+
+.topo-texto {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   LAYOUT PRINCIPAL
+
+   ================================================== */
+
+
+
+.login-layout {
+
+    min-height: calc(100vh - 126px);
+
+
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+
+
+    position: relative;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   APRESENTAÇÃO / LADO ESQUERDO
+
+   ================================================== */
+
+
+
+.apresentacao {
+
+    min-height: 690px;
+
+
+
+    padding: 65px 8%;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+
+
+    position: relative;
+
+    overflow: hidden;
+
+
+
+    background:
+
+        radial-gradient(
+
+            ellipse at 65% 50%,
+
+            rgba(170, 0, 12, 0.20),
+
+            transparent 50%
+
+        ),
+
+        #080808;
+
+}
+
+
+
+
+
+/* FAIXAS GEOMÉTRICAS VERMELHAS */
+
+
+
+.decoracao {
+
+    position: absolute;
+
+    pointer-events: none;
+
+}
+
+
+
+.decoracao-1 {
+
+    width: 480px;
+
+    height: 480px;
+
+
+
+    top: -200px;
+
+    right: -190px;
+
+
+
+    transform: rotate(45deg);
+
+
+
+    background: linear-gradient(
+
+        135deg,
+
+        transparent 38%,
+
+        #800008 39%,
+
+        #E30613 55%,
+
+        #FF1B29 67%,
+
+        #A00009 80%,
+
+        transparent 81%
+
+    );
+
+
+
+    filter: drop-shadow(
+
+        0 0 35px rgba(227, 6, 19, 0.45)
+
+    );
+
+}
+
+
+
+.decoracao-2 {
+
+    width: 390px;
+
+    height: 390px;
+
+
+
+    bottom: -260px;
+
+    right: -100px;
+
+
+
+    transform: rotate(45deg);
+
+
+
+    border: 55px solid #D50010;
+
+
+
+    filter: drop-shadow(
+
+        0 0 25px rgba(227, 6, 19, 0.5)
+
+    );
+
+
+
+    opacity: 0.8;
+
+}
+
+
+
+
+
+/* CONTEÚDO */
+
+
+
+.apresentacao-conteudo {
+
+    width: 100%;
+
+    max-width: 620px;
+
+
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+
+.etiqueta {
+
+    display: block;
+
+
+
+    color: var(--vermelho-claro);
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.apresentacao h1 {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(40px, 4vw, 64px);
+
+
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.apresentacao h1 span {
+
+    color: var(--vermelho);
+
+}
+
+
+
+.apresentacao-conteudo > p {
+
+    max-width: 440px;
+
+
+
+    color: #BDBDBD;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+
+
+    margin-bottom: 45px;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   CARTÃO NEXBANK ILUSTRATIVO
+
+   ================================================== */
+
+
+
+.cartao-visual {
+
+    width: 370px;
+
+    height: 225px;
+
+    padding: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #555;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+
+        135deg,
+
+        #292929 0%,
+
+        #101010 38%,
+
+        #050505 75%,
+
+        #252525 100%
+
+    );
+
+    box-shadow:
+
+        15px 20px 50px rgba(0, 0, 0, 0.7),
+
+        0 0 45px rgba(227, 6, 19, 0.45);
+
+    transform: rotate(-5deg);
+
+    transition: 0.4s ease;
+
+}
+
+
+
+.cartao-visual:hover {
+
+    transform: rotate(-2deg) translateY(-8px);
+
+}
+
+
+
+.cartao-reflexo {
+
+    position: absolute;
+
+    width: 200%;
+
+    height: 100%;
+
+    top: 0;
+
+    left: -60%;
+
+    background: linear-gradient(
+
+        115deg,
+
+        transparent 30%,
+
+        rgba(255,255,255,0.07) 48%,
+
+        transparent 60%
+
+    );
+
+    transform: rotate(-20deg);
+
+}
+
+
+
+.cartao-topo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+
+}
+
+
+
+.cartao-logo img, 
+
+.logo-imagem {
+
+    width: 120px !important;
+
+    height: auto !important;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+
+.cartao-contactless {
+
+    color: #ffffff;
+
+    opacity: 0.85;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+
+.cartao-chip-metal {
+
+    width: 43px;
+
+    height: 32px;
+
+    margin-top: 18px;
+
+    border-radius: 7px;
+
+    border: 1px solid #B4B4B4;
+
+    background: linear-gradient(
+
+        135deg,
+
+        #777,
+
+        #DDD,
+
+        #888
+
+    );
+
+}
+
+
+
+.cartao-inferior {
+
+    position: absolute;
+
+    bottom: 22px;
+
+    left: 25px;
+
+    right: 25px;
+
+    display: flex;
+
+    /* Separa os itens: PREMIUM na ponta esquerda e VISA na ponta direita */
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+}
+
+
+
+/* Estilo do PREMIUM na esquerda */
+
+.cartao-premium {
+
+    color: #E0E0E0;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* Container do VISA + PLATINUM na direita */
+
+.cartao-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    line-height: 1;
+
+}
+
+
+
+.cartao-inferior strong {
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    color: white;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+.cartao-platinum {
+
+    color: #E0E0E0;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    margin-top: 4px;
+
+    font-style: italic;
+
+}
+
+
+
+
+
+/* SEGURANÇA */
+
+
+
+.seguranca {
+
+    margin-top: 55px;
+
+
+
+    color: #929292;
+
+    font-size: 12px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+
+.seguranca span {
+
+    color: var(--vermelho);
+
+    font-size: 21px;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   ÁREA DE LOGIN / LADO DIREITO
+
+   ================================================== */
+
+
+
+.login-area {
+
+    padding: 55px 9%;
+
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #0C0C0C,
+
+            #080808
+
+        );
+
+
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+
+.login-area::before {
+
+    content: "";
+
+
+
+    position: absolute;
+
+
+
+    width: 400px;
+
+    height: 400px;
+
+
+
+    right: -280px;
+
+    top: 20%;
+
+
+
+    border: 45px solid rgba(227, 6, 19, 0.65);
+
+
+
+    transform: rotate(45deg);
+
+    pointer-events: none;
+
+}
+
+
+
+
+
+/* CARTÃO DE LOGIN */
+
+
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+
+
+    padding: 38px;
+
+
+
+    position: relative;
+
+    z-index: 2;
+
+
+
+    background: #111111;
+
+
+
+    border: 1px solid #292929;
+
+    border-radius: 14px;
+
+
+
+    box-shadow:
+
+        0 20px 70px rgba(0,0,0,0.55),
+
+        0 0 30px rgba(227,6,19,0.06);
+
+}
+
+
+
+
+
+/* CABEÇALHO DO LOGIN */
+
+
+
+.login-etiqueta {
+
+    color: var(--vermelho);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+.login-cabecalho h2 {
+
+    margin-top: 18px;
+
+    margin-bottom: 12px;
+
+
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 31px;
+
+}
+
+
+
+.login-cabecalho p {
+
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+
+
+    margin-bottom: 32px;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   FORMULÁRIO
+
+   ================================================== */
+
+
+
+.campo {
+
+    margin-bottom: 23px;
+
+}
+
+
+
+.campo label {
+
+    display: block;
+
+
+
+    margin-bottom: 10px;
+
+
+
+    font-size: 13px;
+
+    color: #DDD;
+
+}
+
+
+
+.campo input {
+
+    width: 100%;
+
+    height: 52px;
+
+
+
+    padding: 0 16px;
+
+
+
+    background: #080808;
+
+
+
+    border: 1px solid #353535;
+
+    border-radius: 8px;
+
+
+
+    outline: none;
+
+
+
+    color: white;
+
+    font-size: 14px;
+
+
+
+    transition: 0.3s;
+
+}
+
+
+
+.campo input::placeholder {
+
+    color: #707070;
+
+}
+
+
+
+.campo input:focus {
+
+    border-color: var(--vermelho);
+
+
+
+    box-shadow:
+
+        0 0 0 3px rgba(227, 6, 19, 0.12);
+
+}
+
+
+
+
+
+/* RECUPERAR SENHA */
+
+
+
+.recuperar {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+
+
+    margin-top: -5px;
+
+    margin-bottom: 27px;
+
+}
+
+
+
+.recuperar a {
+
+    color: #CCC;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.recuperar a:hover {
+
+    color: var(--vermelho);
+
+}
+
+
+
+
+
+/* BOTÃO ENTRAR */
+
+
+
+.btn-entrar {
+
+    width: 100%;
+
+    height: 54px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+
+
+    border: none;
+
+    border-radius: 8px;
+
+
+
+    background: linear-gradient(
+
+        100deg,
+
+        #E30613,
+
+        #C0000A
+
+    );
+
+
+
+    color: white;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 14px;
+
+
+
+    transition: 0.3s;
+
+}
+
+
+
+.btn-entrar span {
+
+    font-size: 24px;
+
+}
+
+
+
+.btn-entrar:hover {
+
+    background: linear-gradient(
+
+        100deg,
+
+        #FF1B29,
+
+        #E30613
+
+    );
+
+
+
+    box-shadow:
+
+        0 0 30px rgba(227, 6, 19, 0.35);
+
+
+
+    transform: translateY(-2px);
+
+}
+
+
+
+
+
+/* MENSAGEM DE ERRO */
+
+
+
+.mensagem-erro {
+
+    padding: 13px;
+
+    margin-bottom: 20px;
+
+
+
+    background: rgba(227, 6, 19, 0.10);
+
+
+
+    border: 1px solid rgba(227, 6, 19, 0.45);
+
+    border-radius: 8px;
+
+}
+
+
+
+.mensagem-erro p {
+
+    color: #FF737D;
+
+    font-size: 13px;
+
+}
+
+
+
+
+
+/* CADASTRO */
+
+
+
+.cadastro {
+
+    margin-top: 27px;
+
+    padding-top: 25px;
+
+
+
+    text-align: center;
+
+
+
+    border-top: 1px solid #292929;
+
+}
+
+
+
+.cadastro p {
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+
+.cadastro a {
+
+    color: var(--vermelho);
+
+    margin-left: 4px;
+
+    font-weight: 500;
+
+}
+
+
+
+.cadastro a:hover {
+
+    color: #FF525C;
+
+}
+
+
+
+
+
+/* PROTEÇÃO */
+
+
+
+.login-protecao {
+
+    margin-top: 28px;
+
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+
+.login-protecao span {
+
+    color: var(--vermelho);
+
+    font-size: 18px;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   RODAPÉ
+
+   ================================================== */
+
+
+
+footer {
+
+    height: 50px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    background: #070707;
+
+    border-top: 1px solid #202020;
+
+
+
+    color: #666;
+
+    font-size: 11px;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   ANIMAÇÕES
+
+   ================================================== */
+
+
+
+@keyframes surgir {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+.apresentacao-conteudo {
+
+    animation: surgir 0.8s ease;
+
+}
+
+
+
+.login-card {
+
+    animation: surgir 0.8s ease;
+
+}
+
+
+
+
+
+/* ==================================================
+
+   TABLETS
+
+   ================================================== */
+
+
+
+@media (max-width: 1050px) {
+
+
+
+    .login-layout {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+
+    .apresentacao {
+
+        padding: 50px 6%;
+
+    }
+
+
+
+    .apresentacao h1 {
+
+        font-size: 42px;
+
+    }
+
+
+
+    .cartao-visual {
+
+        width: 310px;
+
+        height: 195px;
+
+    }
+
+
+
+    .login-area {
+
+        padding: 40px 5%;
+
+    }
+
+
+
+    .login-card {
+
+        padding: 28px;
+
+    }
+
+}
+
+
+
+
+
+/* ==================================================
+
+   CELULARES
+
+   ================================================== */
+
+
+
+@media (max-width: 760px) {
+
+
+
+    .topo {
+
+        height: 65px;
+
+        padding: 0 6%;
+
+    }
+
+
+
+    .topo-texto {
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+
+    .login-layout {
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+
+
+    .apresentacao {
+
+        min-height: 560px;
+
+        padding: 55px 7%;
+
+    }
+
+
+
+    .apresentacao h1 {
+
+        font-size: 43px;
+
+    }
+
+
+
+    .apresentacao-conteudo > p {
+
+        font-size: 14px;
+
+    }
+
+
+
+    .cartao-visual {
+
+        width: 290px;
+
+        height: 180px;
+
+    }
+
+
+
+    .login-area {
+
+        padding: 55px 7%;
+
+    }
+
+
+
+    .login-card {
+
+        max-width: 480px;
+
+        padding: 30px 23px;
+
+    }
+
+
+
+    footer {
+
+        padding: 15px;
+
+        text-align: center;
+
+    }
+
+}
+
+
+
+
+
+@media (max-width: 400px) {
+
+
+
+    .apresentacao h1 {
+
+        font-size: 36px;
+
+    }
+
+
+
+    .cartao-visual {
+
+        width: 260px;
+
+        height: 165px;
+
+    }
+
+
+
+    .login-cabecalho h2 {
+
+        font-size: 26px;
+
+    }
+
+}
+
+
+
+
+
+/* ==================================================
+
+   NEXBANK - COFRE DIGITAL
+
+   IDENTIDADE: PRETO / VERMELHO / BRANCO
+
+   ================================================== */
+
+
+
+/* FONTES */
+
+@font-face {
+
+    font-family: 'NexBankRegular';
+
+    src: url('https://static.nubank.com.br/7f7bc5c32824aca0d84078cc9334db1bb79c9aa2/_next/static/media/60a2f104238a90af-s.p.woff2') format('woff2');
+
+    font-weight: 400;
+
+    font-display: swap;
+
+}
+
+
+
+@font-face {
+
+    font-family: 'NexBankMedium';
+
+    src: url('https://static.nubank.com.br/7f7bc5c32824aca0d84078cc9334db1bb79c9aa2/_next/static/media/64a06134aa18a255-s.p.woff2') format('woff2');
+
+    font-weight: 500;
+
+    font-display: swap;
+
+}
+
+
+
+/* VARIÁVEIS */
+
+:root {
+
+    --vermelho: #E30613;
+
+    --vermelho-claro: #FF2635;
+
+    --vermelho-escuro: #A5000A;
+
+    --preto: #070707;
+
+    --card: #111111;
+
+    --card-claro: #161616;
+
+    --branco: #FFFFFF;
+
+    --cinza: #A5A5A5;
+
+    --borda: #292929;
+
+
+
+    --fonte: 'NexBankRegular', Arial, sans-serif;
+
+    --fonte-titulo: 'NexBankMedium', Arial, sans-serif;
+
+}
+
+
+
+/* RESET */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    min-height: 100vh;
+
+    background: var(--preto);
+
+    color: var(--branco);
+
+    font-family: var(--fonte);
+
+    overflow-x: hidden;
+
+}
+
+
+
+/* ==================================================
+
+   CABEÇALHO
+
+   ================================================== */
+
+
+
+header {
+
+    min-height: 76px;
+
+    padding: 0 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #080808;
+
+    border-bottom: 1px solid var(--borda);
+
+}
+
+
+
+header h1 {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+
+    color: var(--branco);
+
+}
+
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+
+nav a {
+
+    color: #AAAAAA;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+
+}
+
+
+
+nav a:hover {
+
+    color: var(--vermelho-claro);
+
+}
+
+
+
+/* Remove os separadores | do HTML */
+
+header nav {
+
+    font-size: 0;
+
+}
+
+
+
+/* ==================================================
+
+   CONTEÚDO PRINCIPAL
+
+   ================================================== */
+
+
+
+main {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 55px auto;
+
+    min-height: calc(100vh - 210px);
+
+}
+
+
+
+main > h1 {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 36px;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+main > p {
+
+    color: var(--cinza);
+
+    font-size: 15px;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+/* ==================================================
+
+   CARDS DAS SEÇÕES
+
+   ================================================== */
+
+
+
+main section {
+
+    background: var(--card);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+    transition: border-color 0.3s;
+
+}
+
+
+
+main section:hover {
+
+    border-color: #454545;
+
+}
+
+
+
+main section h2 {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 19px;
+
+    margin-bottom: 22px;
+
+}
+
+
+
+/* ==================================================
+
+   SALDO DO COFRE
+
+   ================================================== */
+
+
+
+main section:first-of-type {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+
+            ellipse at 90% 50%,
+
+            rgba(227, 6, 19, 0.18),
+
+            transparent 55%
+
+        ),
+
+        linear-gradient(135deg, #171717, #0D0D0D);
+
+    border-color: #393939;
+
+}
+
+
+
+main section:first-of-type h1 {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 48px;
+
+    color: var(--branco);
+
+    margin-bottom: 12px;
+
+}
+
+
+
+main section:first-of-type h1 span {
+
+    color: var(--vermelho-claro);
+
+}
+
+
+
+main section:first-of-type p {
+
+    color: var(--cinza);
+
+    font-size: 13px;
+
+}
+
+
+
+/* ==================================================
+
+   FORMULÁRIOS
+
+   ================================================== */
+
+
+
+main section form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+
+main section form label {
+
+    color: #DDDDDD;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+main section form input {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    background: #080808;
+
+    border: 1px solid #353535;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: white;
+
+    font-family: var(--fonte);
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+    transition: 0.3s;
+
+}
+
+
+
+main section form input::placeholder {
+
+    color: #707070;
+
+}
+
+
+
+main section form input:focus {
+
+    border-color: var(--vermelho);
+
+    box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.12);
+
+}
+
+
+
+/* ==================================================
+
+   BOTÕES
+
+   ================================================== */
+
+
+
+main section form button {
+
+    min-width: 190px;
+
+    height: 48px;
+
+    padding: 0 24px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+
+        100deg,
+
+        var(--vermelho),
+
+        #C0000A
+
+    );
+
+    color: white;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+
+main section form button:hover {
+
+    background: linear-gradient(
+
+        100deg,
+
+        #FF2635,
+
+        var(--vermelho)
+
+    );
+
+    box-shadow: 0 0 25px rgba(227, 6, 19, 0.3);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* ==================================================
+
+   HISTÓRICO DE MOVIMENTAÇÕES
+
+   ================================================== */
+
+
+
+main section:last-of-type {
+
+    overflow-x: auto;
+
+}
+
+
+
+main section:last-of-type table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    border: none;
+
+    text-align: left;
+
+}
+
+
+
+main section:last-of-type thead {
+
+    background: #191919;
+
+}
+
+
+
+main section:last-of-type th {
+
+    color: #BBBBBB;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #333;
+
+}
+
+
+
+main section:last-of-type td {
+
+    color: #DDDDDD;
+
+    font-size: 13px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #292929;
+
+}
+
+
+
+main section:last-of-type tbody tr {
+
+    transition: 0.2s;
+
+}
+
+
+
+main section:last-of-type tbody tr:hover {
+
+    background: #191919;
+
+}
+
+
+
+main section:last-of-type tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+
+/* ==================================================
+
+   SEPARADORES
+
+   ================================================== */
+
+
+
+hr {
+
+    display: none;
+
+}
+
+
+
+/* ==================================================
+
+   RODAPÉ
+
+   ================================================== */
+
+
+
+footer {
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #070707;
+
+    border-top: 1px solid #202020;
+
+    color: #666;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    padding: 15px;
+
+}
+
+
+
+/* ==================================================
+
+   RESPONSIVIDADE - TABLETS
+
+   ================================================== */
+
+
+
+@media (max-width: 900px) {
+
+
+
+    header {
+
+        padding: 0 4%;
+
+    }
+
+
+
+    nav {
+
+        gap: 15px;
+
+    }
+
+
+
+    main {
+
+        width: 92%;
+
+    }
+
+
+
+    main section {
+
+        padding: 25px;
+
+    }
+
+}
+
+
+
+/* ==================================================
+
+   RESPONSIVIDADE - CELULARES
+
+   ================================================== */
+
+
+
+@media (max-width: 650px) {
+
+
+
+    header {
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+
+    header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+
+    nav {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+    }
+
+
+
+    nav a {
+
+        font-size: 11px;
+
+    }
+
+
+
+    main {
+
+        width: 90%;
+
+        margin: 35px auto;
+
+    }
+
+
+
+    main > h1 {
+
+        font-size: 28px;
+
+    }
+
+
+
+    main > p {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+
+    main section {
+
+        padding: 22px 18px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+
+    main section:first-of-type h1 {
+
+        font-size: 36px;
+
+    }
+
+
+
+    main section h2 {
+
+        font-size: 17px;
+
+    }
+
+
+
+    main section form input {
+
+        max-width: 100%;
+
+    }
+
+
+
+    main section form button {
+
+        width: 100%;
+
+    }
+
+
+
+    main section:last-of-type table {
+
+        min-width: 550px;
+
+    }
+
+
+
+    footer {
+
+        font-size: 10px;
+
+    }
+
+}

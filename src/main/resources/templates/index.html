@@ -4,145 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NexBank</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .botao {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #f4121c;
-            color: white;
-            border-radius: 6px;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        .inicio {
-            background: #f5f5f5;
-            text-align: center;
-        }
-
-        h1, h2 {
-            margin-bottom: 15px;
-        }
-
-        .inicio p {
-            margin-bottom: 25px;
-        }
-
-        .grade {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .item {
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
-        }
-
-        .item h3 {
-            margin-bottom: 10px;
-        }
-
-        .planos {
-            background: #f5f5f5;
-        }
-
-        .faq details {
-            padding: 15px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .faq summary {
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        footer {
-            padding: 30px 0;
-            background: #171717;
-            color: white;
-            text-align: center;
-        }
-
-        @media (max-width: 700px) {
-            nav, nav ul {
-                flex-direction: column;
-            }
-
-            .grade {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel = "stylesheet" href = "index.css">
 </head>
 
 <body>
 
-    <header>
+    <header class = "topo">
         <div class="container">
             <nav>
-                <a class="logo" href="#inicio">NexBank</a>
+                
+                <a href = "#" class = "logo">
+                <img th:src = "@{isologoATT.png}" alt = "NexBank" class = "logo-imagem">
+                </a>
 
                 <ul>
                     <li><a href="#recursos">Recursos</a></li>
                     <li><a href="#cartao">Cartão</a></li>
                     <li><a href="#planos">Planos</a></li>
-                    <li><a href="#duvidas">Dúvidas</a></li>
+                    <li><a th:href="@{/help}">Dúvidas</a></li>
                 </ul>
 
                 <!-- TODO Thymeleaf: trocar o destino pelo endpoint de login/cadastro -->
-                <a class="botao" href="#">Entrar</a>
+                <a class="botao" th:href="@{/}">Entrar</a>
             </nav>
         </div>
     </header>
@@ -154,7 +37,7 @@
                 <p>Faça pagamentos, acompanhe seu dinheiro e conheça nossos serviços.</p>
 
                 <!-- TODO Thymeleaf: definir o link usando th:href -->
-                <a class="botao" href="#cadastro">Abra sua conta</a>
+                <a class="botao" th:href="@{/register}">Abra sua conta</a>
             </div>
         </section>
 
@@ -165,8 +48,8 @@
 
                     <!-- TODO Thymeleaf: iterar a lista de recursos com th:each -->
                     <article class="item">
-                        <h3>Pix</h3>
-                        <p>Envie e receba dinheiro de forma prática.</p>
+                        <h3>Envio Direto</h3>
+                        <p>Envie dinheiro diretamente para outras contas.</p>
                     </article>
 
                     <article class="item">
@@ -254,7 +137,7 @@
                 <p>Crie sua conta para conhecer os serviços.</p>
 
                 <!-- TODO Thymeleaf: apontar para a rota de cadastro -->
-                <a class="botao" href="#">Criar conta</a>
+                <a class="botao" th:href="@{/register}">Criar conta</a>
             </div>
         </section>
     </main>

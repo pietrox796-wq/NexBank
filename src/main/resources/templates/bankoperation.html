@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferência | NexBank</title>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>NEXBANK</h1>
+
+        <nav>
+            <a th:href="@{/index}">Início</a> |
+            <a th:href="@{/profile}">Minha Conta</a> |
+            <a th:href="@{/safe}">Meu Cofre</a>
+        </nav>
+    </header>S
+
+    <hr>
+
+    <main>
+
+        <h1>Transferir dinheiro</h1>
+        <p>Informe o CPF da conta que receberá a transferência.</p>
+
+        <form th:action="@{/bankoperation}" method="post" th:object = "${modelReceiving}">
+
+                <label for="cpf">CPF do destinatário:</label>
+                <input type="number" id="cpf" th:field = "*{cpf}"
+                    name="cpf"
+                    placeholder="Digite o CPF da conta"
+                    min="1" required>
+
+            <br>
+            
+            <label for="amount">Quantia:</label>
+                <input type="number" id="amount" th:field = "*{cash}"
+                    name="amount"
+                    placeholder="Digite a quantia"
+                    min="1" required>
+
+            <br>
+
+            <button type="submit">Continuar</button>
+
+        </form>
+
+        <br>
+        
+        <section th:if="${resposta!=null}">
+		<h2 th:text="${resposta}">resposta</h2>
+	</section><br>
+
+        <a th:href="@{/safe}">Voltar</a>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 NexBank - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

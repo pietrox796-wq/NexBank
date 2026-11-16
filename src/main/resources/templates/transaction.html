@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferência | NexBank</title>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>NEXBANK</h1>
+
+        <nav>
+            <a th:href="@{/index}">Início</a> |
+            <a th:href="@{/conta}">Minha Conta</a> |
+            <a th:href="@{/cofre}">Meu Cofre</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <h1>Transferir dinheiro</h1>
+        <p>Informe o ID da conta que receberá a transferência.</p>
+
+        <form th:action="@{/transferir}" method="post">
+
+            <div>
+                <label for="idDestino">ID do destinatário:</label>
+                <input type="number" id="idDestino"
+                    name="idDestino"
+                    placeholder="Digite o ID da conta"
+                    min="1" required>
+            </div>
+
+            <br>
+
+            <button type="submit">Continuar</button>
+
+        </form>
+
+        <br>
+
+        <a th:href="@{/conta}">Voltar</a>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 NexBank - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

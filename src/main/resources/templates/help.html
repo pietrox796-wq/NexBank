@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda e Suporte | NexBank</title>
+		<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>NEXBANK</h1>
+
+        <nav>
+            <a th:href="@{/index}">Início</a> |
+        </nav>
+
+    </header>
+
+    <hr>
+
+    <main>
+
+        <h1>Central de Ajuda</h1>
+
+        <p>
+            Bem-vindo à central de ajuda do NexBank!
+            Estamos aqui para ajudar você a utilizar nossos serviços.
+        </p>
+
+        <section>
+
+            <h2>Perguntas frequentes</h2>
+
+            <details>
+                <summary>Como faço para acessar minha conta?</summary>
+                <p>Acesse a página de login e informe seu CPF e senha cadastrados.</p>
+            </details>
+
+            <details>
+                <summary>Como realizar uma transferência?</summary>
+                <p>Acesse a opção de transferências, informe o ID da conta de destino e finalize a operação.</p>
+            </details>
+
+            <details>
+                <summary>Como consultar meu saldo?</summary>
+                <p>Acesse a página Minha Conta para visualizar seu saldo disponível.</p>
+            </details>
+
+            <details>
+                <summary>Como adicionar dinheiro ao meu cofre?</summary>
+                <p>Acesse a página Meu Cofre e informe o valor que deseja guardar.</p>
+            </details>
+
+            <details>
+                <summary>Esqueci minha senha. O que fazer?</summary>
+                <p>Acesse a opção de recuperação de senha na página de login.</p>
+            </details>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h2>Entre em contato conosco</h2>
+
+            <p>
+                Não encontrou a resposta que procurava?
+                Envie sua dúvida para nossa equipe de suporte.
+            </p>
+
+            <form th:action="@{/help/enviar}" method="post">
+
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome"
+                        placeholder="Digite seu nome" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf"
+                        placeholder="Digite seu CPF" maxlength="11" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto"
+                        placeholder="Digite o assunto" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="mensagem">Sua mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"
+                        placeholder="Descreva sua dúvida ou problema"
+                        rows="5" cols="40" required></textarea>
+                </div>
+
+                <br>
+
+                <button type="submit">Enviar mensagem</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h2>Atendimento NexBank</h2>
+
+            <p>Estamos trabalhando para oferecer a melhor experiência possível.</p>
+
+            <p>Horário de atendimento: Segunda a sexta-feira.</p>
+
+        </section>
+
+        <div th:if="${mensagem}">
+            <p th:text="${mensagem}"></p>
+        </div>
+
+        <div th:if="${erro}">
+            <p th:text="${erro}"></p>
+        </div>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 NexBank - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

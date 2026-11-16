@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>Login | NexBank</title>
+
+
+
+<link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+
+
+<body>
+
+
+
+	<header class="topo">
+
+		<a href="#" class="logo"> <img th:src="@{isologoATT.png}"
+			alt="NexBank" class="logo-imagem">
+
+		</a> <span class="topo-texto">NEXBANK MAIN VIÉNIESUELA</span>
+
+	</header>
+
+
+
+	<main class="login-layout">
+
+
+
+		<!-- LADO ESQUERDO -->
+
+		<section class="apresentacao">
+
+
+
+			<div class="decoracao decoracao-1"></div>
+
+			<div class="decoracao decoracao-2"></div>
+
+
+
+			<div class="apresentacao-conteudo">
+
+
+
+				<span class="etiqueta">EXCLUSIVIDADE NEXBANK</span>
+
+
+
+				<h1>
+
+					Seu dinheiro. <br> Suas escolhas. <br> <span>Seu
+						próximo nível.</span>
+
+				</h1>
+
+
+
+				<p>Uma experiência bancária completa, moderna e segura. Tudo o
+					que você precisa em um só lugar.</p>
+
+
+
+				<!-- CARTÃO ILUSTRATIVO -->
+
+				<div class="cartao-visual">
+
+					<div class="cartao-reflexo"></div>
+
+
+
+					<div class="cartao-topo">
+
+						<span class="cartao-logo"> <img th:src="@{/isologoATT.png}"
+							alt="NexBank" class="logo-imagem">
+
+						</span>
+
+
+
+						<!-- Ícone de aproximação via imagem com Thymeleaf -->
+
+						<span class="cartao-contactless"> <img
+							th:src="@{/aproximação.png}" alt="Aproximação"
+							style="width: 24px; height: auto;">
+
+						</span>
+
+					</div>
+
+
+
+					<div class="cartao-chip-metal"></div>
+
+
+
+					<div class="cartao-inferior">
+
+						<span class="cartao-premium">PREMIUM</span>
+
+
+
+						<div class="cartao-brand">
+
+							<strong>VISA</strong> <span class="cartao-platinum">PLATINUM</span>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<div class="seguranca">
+
+					<span>◈</span> Seus dados protegidos com tecnologia de segurança.
+
+				</div>
+
+
+
+			</div>
+
+
+
+		</section>
+
+
+
+
+
+		<!-- LADO DIREITO -->
+
+		<section class="login-area">
+
+
+
+			<div class="login-card">
+
+
+
+				<div class="login-cabecalho">
+
+
+
+					<span class="login-etiqueta"> ACESSO À SUA CONTA </span>
+
+
+
+					<h2>Bem-vindo de volta!</h2>
+
+
+
+					<p>Entre com seus dados para acessar sua conta NexBank.</p>
+
+
+
+				</div>
+
+
+
+
+
+				<form th:action="@{/}" method="post" th:object = "${account}">
+
+
+
+					<div th:if="${param.error}" class="mensagem-erro">
+
+						<p>CPF ou senha incorretos.</p>
+
+					</div>
+
+
+
+					<div class="campo">
+
+						<label for="cpf">CPF</label> <input type="text" id="cpf" th:field = "*{cpf}"
+							name="username" placeholder="Digite seu CPF" maxlength="14"
+							autocomplete="username" required>
+
+					</div>
+
+
+
+
+
+					<div class="campo">
+
+						<label for="senha">Senha</label> <input type="password" id="senha" th:field = "*{password}"
+							name="password" placeholder="Digite sua senha"
+							autocomplete="current-password" required>
+
+					</div>
+
+
+
+
+
+					<div class="recuperar">
+						<a th:href="@{/recuperar-senha}"> Esqueceu sua senha? </a>
+					</div>
+					
+
+					<button type="submit" class="btn-entrar">
+
+						Acessar minha conta <span>›</span>
+
+					</button>
+
+
+
+				</form>
+
+
+
+
+
+				<div class="cadastro">
+
+					<p>
+
+						Ainda não tem uma conta? <a th:href="@{/register}">
+
+							Cadastre-se </a>
+
+					</p>
+
+				</div>
+
+
+
+
+
+				<div class="login-protecao">
+
+					<span>◈</span> Ambiente seguro e protegido NexBank
+
+				</div>
+
+
+
+			</div>
+
+
+
+		</section>
+
+
+
+	</main>
+
+
+
+
+
+	<footer> © 2026 NexBank. Todos os direitos reservados. </footer>
+
+
+
+</body>
+
+</html>
+
