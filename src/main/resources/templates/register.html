@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cadastro | NexBank</title>
+
+<link rel="stylesheet" th:href="@{/style.css}">
+<link rel = "icon" th:href = "@{/iconNex.png}">
+</head>
+
+<body>
+
+	<header class="topo">
+		<a href="/" class="logo"> <img th:src="@{/isologoATT.png}"
+			alt="NexBank" class="logo-imagem">
+		</a> <span class="topo-texto">NEXBANK MAIN VIÉNIESUELA</span>
+	</header>
+
+	<main class="login-layout">
+
+		<!-- LADO ESQUERDO -->
+		<section class="apresentacao">
+
+			<div class="decoracao decoracao-1"></div>
+			<div class="decoracao decoracao-2"></div>
+
+			<div class="apresentacao-conteudo">
+
+				<span class="etiqueta">FAÇA PARTE DO NEXBANK</span>
+
+				<h1>
+					Sua jornada. <br> Seu dinheiro. <br> <span>Seu
+						futuro.</span>
+				</h1>
+
+				<p>Abra sua conta e tenha acesso a uma experiência bancária
+					moderna, simples e segura.</p>
+
+				<div class="seguranca">
+					<span>◈</span> Cadastro rápido e ambiente protegido.
+				</div>
+
+			</div>
+
+		</section>
+
+		<!-- LADO DIREITO -->
+		<section class="login-area">
+
+			<div class="login-card">
+
+				<div class="login-cabecalho">
+
+					<span class="login-etiqueta">ABERTURA DE CONTA</span>
+
+					<h2>Crie sua conta!</h2>
+
+					<p>Preencha seus dados para começar a utilizar o NexBank.</p>
+
+				</div>
+
+				<form th:action="@{/register}" method="post" th:object="${acc}">
+
+					<div class="campo">
+						<label for="user">Nome completo</label> <input type="text"
+							id="user" th:field="*{username}" placeholder="Digite seu nome"
+							maxlength="60" required>
+					</div>
+
+					<div class="campo">
+						<label for="cpf">CPF</label> <input type="text" id="cpf"
+							th:field="*{cpf}" placeholder="Digite seu CPF" maxlength="14"
+							required>
+					</div>
+
+					<div class="campo">
+						<label for="age">Data de nascimento</label> <input type="date"
+							id="age" th:field="*{age}" required>
+					</div>
+					
+					<div class="campo">
+						<label for="cash">Dinheiro</label> <input type="number"
+							id="cash" th:field="*{cash}" placeholder="Acrescente sua quantia"
+							required>
+					</div>
+
+					<div class="campo">
+						<label for="password">Senha</label> <input type="password"
+							id="password" th:field="*{password}" placeholder="Crie uma senha"
+							required>
+					</div>
+
+					<button type="submit" class="btn-entrar">
+						Criar minha conta <span>›</span>
+					</button>
+
+				</form>
+
+				<div class="mensagem" th:if="${answer != null}">
+					<p th:text="${answer}"></p>
+				</div>
+
+				<div class="cadastro">
+					<p>
+						Já possui uma conta? <a th:href="@{/}">Faça login</a>
+					</p>
+				</div>
+
+				<div class="login-protecao">
+					<span>◈</span> Ambiente seguro e protegido NexBank
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+	<footer> © 2026 NexBank. Todos os direitos reservados. </footer>
+
+</body>
+</html>

@@ -22,15 +22,16 @@ public class AccountService {
 
 	@Transactional
 	public boolean save(Account account) {
-		try {
-			accountRepository.save(account);
-			return true;
-		} catch(Exception e) {
-			return false;
-		}
+	    account.encrypt();
+	    accountRepository.save(account);
+	    return true;
 	}
 	
 	@Transactional
+	public void update(Account account) {
+	    accountRepository.save(account);
+	}
+	
 	public Account authenticate(String cpf, String password) {
 		Account account = accountRepository.findByCpf(cpf);
 		
@@ -40,7 +41,6 @@ public class AccountService {
 		return null;
 	}
 	
-	@Transactional
 	public Account authenticateByCpf(String cpf) {
 		Account account = accountRepository.findByCpf(cpf);
 		

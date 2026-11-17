@@ -1,9 +1,9 @@
 package com.pietro.nexbankproject.service;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.pietro.nexbankproject.model.Account;
@@ -22,12 +22,16 @@ public class TransactionService {
 		this.transactionRepository = transactionRepository;
 	}
 	
-	@Transactional
-	public List<Transaction> findAll(Integer id) {
-		
-		List<Transaction> list = transactionRepository.findBySendingId(id, Sort.by(Sort.Direction.DESC,"sendingId"));
+	public List<Transaction> findSendings(Integer id) {
+		List<Transaction> list = transactionRepository.findBySendingId(id);
+		list.sort(Comparator.comparing(Transaction::getCod).reversed());
+		return list;	
+	}
 	
-		return list;
+	public List<Transaction> findReceivings(Integer id) {
+		List<Transaction> list = transactionRepository.findByReceivingId(id);
+		list.sort(Comparator.comparing(Transaction::getCod).reversed());
+		return list;	
 	}
 	
 	@Transactional

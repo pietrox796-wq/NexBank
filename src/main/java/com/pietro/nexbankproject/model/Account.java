@@ -31,7 +31,7 @@ public class Account {
 	@Column(name = "age")
 	private LocalDate age; // datetime
 	//Spring Communication
-	@Column(name = "cpf", nullable = false, length = 11)
+	@Column(name = "cpf", nullable = false, length = 11, unique = true)
 	private String cpf; // varchar(11)
 	//Spring Communication
 	@Column(name = "password", nullable = false, length = 60)

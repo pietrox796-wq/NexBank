@@ -52,12 +52,14 @@ public class BankOperationController {
 			resposta = "";
 		};
 		
-		accountService.save(receiving);
-		accountService.save(sending);
+		accountService.update(receiving);
+		accountService.update(sending);
 		
 		model.addAttribute("resposta", resposta);
 		model.addAttribute("acc", sending);
-		return transfer(model);
+		
+		model.addAttribute("modelReceiving", new Account());
+		return "bankoperation";
 	}
 
 	@GetMapping("/transaction")

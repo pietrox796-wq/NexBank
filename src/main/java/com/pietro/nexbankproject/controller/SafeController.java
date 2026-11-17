@@ -25,24 +25,24 @@ public class SafeController {
 	
 	@GetMapping("/safe")
 	public String transfer(Model model, HttpSession session) {
-		model.addAttribute("acc", session.getAttribute("acc"));
-		return "safe";
+
+	    Account acc = (Account) session.getAttribute("acc");
+
+	    List<Transaction> transactions = transactionService.findSendings(acc.getId());
+	    List<Transaction> receivings = transactionService.findReceivings(acc.getId());
+
+	    model.addAttribute("transactions", transactions);
+	    model.addAttribute("receivings", receivings);
+
+	    model.addAttribute("acc", acc);
+
+	    return "safe";
 	}
 	
 	@PostMapping("/safe")
 	public String transferr(Model model, HttpSession session) {
-		
-		Account acc = (Account) session.getAttribute("acc");
-		
-		List<Transaction> transactions = transactionService.findAll(acc.getId());
-		
-		System.out.println(transactions);
-		
-		if (transactions != null && !transactions.isEmpty()) {
-			model.addAttribute("transactions", transactions);
-		}
-		
 		return transfer(model, session);
 	}
+	
 	
 }
